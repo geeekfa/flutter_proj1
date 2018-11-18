@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'signup.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -109,13 +110,19 @@ class MyCustomFormState extends State<MyCustomForm> {
                                 color: Theme.of(context).buttonColor,
                                 splashColor: Colors.grey,
                                 onPressed: () {
+                                  Firestore.instance
+                                      .collection('student')
+                                      .document('38uZzDzzBTJrw42lWyot')
+                                      .get()
+                                      .then((str) {
+                                        print(str);
+                                      });
+
                                   if (_formKey.currentState.validate()) {
                                     Scaffold.of(context).showSnackBar(
                                         SnackBar(content: Text('Login . . .')));
                                     _formKey.currentState.save();
-                                  } else {
-                                    print(_email);
-                                  }
+                                  } else {}
                                 },
                               )),
                           Padding(padding: EdgeInsets.only(bottom: 5.0)),

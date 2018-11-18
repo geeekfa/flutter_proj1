@@ -1,4 +1,4 @@
-package com.example.flutterproj1;
+package net.entertainmate.flutterproj1;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
