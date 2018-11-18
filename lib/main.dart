@@ -114,8 +114,12 @@ class MyCustomFormState extends State<MyCustomForm> {
                                       .collection('student')
                                       .document('38uZzDzzBTJrw42lWyot')
                                       .get()
-                                      .then((str) {
-                                        print(str);
+                                      .then((documentSnapshot) {
+                                        // str.data.forEach(f);
+                                        documentSnapshot.data.forEach((k,v) => print('${k}: ${v}'));
+                                        // var data = documentSnapshot.data();
+                                        // str.data.forEach( doc {doc.data.toString();});
+                                        // print(str);
                                       });
 
                                   if (_formKey.currentState.validate()) {
